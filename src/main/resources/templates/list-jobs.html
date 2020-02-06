@@ -14,12 +14,12 @@
     <table class="table job-listing">
         <tr th:each="job: ${jobs}">
             <td>
-                <p th:text="${'ID: ' + job.id}"></p>
-                <p th:text="${'Name: ' + job.name}"></p>
-                <p th:text="${'Employer: ' + job.employer}"></p>
-                <p th:text="${'Location: ' + job.location}"></p>
-                <p th:text="${'Position Type: ' + job.positionType}"></p>
-                <p th:text="${'Skill: ' + job.coreCompetency}"></p>
+                <p th:style="${'color: DarkBlue'}">ID: <span th:style="${'color: black'}" th:text="${job.id}"></span></p>
+                <p th:style="${'color: DarkBlue'}">Name: <span th:style="${'color: black'}" th:text="${job.name}"></span></p>
+                <p th:style="${'color: DarkBlue'}">Employer: <a th:style="${'color: black'}" th:href="@{/list/jobs(column=${'employer'},value=${job.employer})}" th:text="${job.employer}"></a></p>
+                <p th:style="${'color: DarkBlue'}">Location: <a th:style="${'color: black'}" th:href="@{/list/jobs(column=${'location'},value=${job.location})}" th:text="${job.location}"></a></p>
+                <p th:style="${'color: DarkBlue'}">Position Type: <a th:style="${'color: black'}" th:href="@{/list/jobs(column=${'positionType'},value=${job.positionType})}" th:text="${job.positionType}"></a></p>
+                <p th:style="${'color: DarkBlue'}">Skill: <a th:style="${'color: black'}" th:href="@{/list/jobs(column=${'coreCompetency'},value=${job.coreCompetency})}" th:text="${job.coreCompetency}"></a></p>
             </td>
         </tr>
     </table>
